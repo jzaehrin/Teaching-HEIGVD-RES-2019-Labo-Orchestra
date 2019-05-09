@@ -107,13 +107,13 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
 | | *Insert your diagram here...* |
 |Question | Who is going to **send UDP datagrams** and **when**? |
-| | *Enter your response here...* |
+| | Tous les musiciens envoie un son toutes les secondes |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
-| | *Enter your response here...* |
+| | l'auditeur concidère tous les musiciens mais uniquement les actives s'ils ont jouer durant les 5 dernières secondes |
 |Question | What **payload** should we put in the UDP datagrams? |
-| | *Enter your response here...* |
+| | le payload contient le son ainsi que le uuid du musicien |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
-| | *Enter your response here...* |
+| | Ils doivent contenir une map de correspondance entre son et instrument. Le sender choix sont son instrument, le receveur fait une recherche à chaque son reçu |
 
 
 ## Task 2: implement a "musician" Node.js application
@@ -121,13 +121,13 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | *Enter your response here...*  |
+| | JSON.stringfy(Object)  |
 |Question | What is **npm**?  |
-| | *Enter your response here...*  |
+| | Package manager |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
-| | *Enter your response here...*  |
+| | --save installe le paquet dans le package.json |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
-| | *Enter your response here...*  |
+| | Pour rechercher des packages de libraire |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
 | | *Enter your response here...*  |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |

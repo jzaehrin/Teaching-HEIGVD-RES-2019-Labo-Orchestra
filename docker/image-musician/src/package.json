@@ -1,0 +1,16 @@
+{
+  "name": "musician",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan Zaehringer",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.7.1",
+    "node-cron": "^2.0.3",
+    "rfc4122": "^1.0.5"
+  }
+}
