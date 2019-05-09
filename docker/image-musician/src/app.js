@@ -1,8 +1,5 @@
 const dgram = require('dgram');
-const RFC4122 = require('rfc4122');
 const cron = require('node-cron');
-
-const rfc4122 = new RFC4122();
 
 if (process.argv[2] === undefined) {
 	console.error("Usage : app.js <instrument>");
@@ -24,7 +21,6 @@ const instruments = new Map([
 ]);
 
 cron.schedule('* * * * * *', function() {
-	console.log(`Sending ${instruments.get('piano')}`);
-	sender.send(instruments.get('piano'), 0, instruments.get('piano').length, 23456, '10.192.107.255');
+	sender.send(instruments.get(process.argv[2]), 0, instruments.get(process.argv[2]).length, 23456, '172.17.255.255');
 });
 
