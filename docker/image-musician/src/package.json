@@ -10,7 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "cron": "^1.7.1",
+    "eslint-config-airbnb": "^17.1.0",
     "node-cron": "^2.0.3",
     "rfc4122": "^1.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
   }
 }
