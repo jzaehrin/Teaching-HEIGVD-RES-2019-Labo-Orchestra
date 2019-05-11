@@ -129,13 +129,13 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
 | | Pour rechercher des packages de libraire |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
-| | *Enter your response here...*  |
+| | `const uuidGenerator = require('uuid/v4');  uuid = uuidGenerator();`  |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Enter your response here...*  |
+| | Utilisant Cron js  |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | *Enter your response here...*  |
+| | Utilisant la class `dgram`. On créer le socket, on le bind puis on peut envoyer des diagrams  |
 |Question | In Node.js, how can we **access the command line arguments**? |
-| | *Enter your response here...*  |
+| | process.argv[2]  |
 
 
 ## Task 3: package the "musician" app in a Docker image
@@ -143,17 +143,17 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we **define and build our own Docker image**?|
-| | *Enter your response here...*  |
+| | Avec un Dockerfile. et en créant une image avec docker build --tag <tag>  |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?  |
-| | *Enter your response here...*  |
+| | Le entrypoint est la commande executer en premier lorsque le container est lancer. Elle s'utilise de la même manière que `CMD` qui est lui executer après. l'entrypoint récupère aussi les arguments passés à la commande docker.  |
 |Question | After building our Docker image, how do we use it to **run containers**?  |
-| | *Enter your response here...*  |
+| | `docker run --rm res/musician <args>  |
 |Question | How do we get the list of all **running containers**?  |
-| | *Enter your response here...*  |
+| | `docker ps`  |
 |Question | How do we **stop/kill** one running container?  |
-| | *Enter your response here...*  |
+| | `docker stop <nom>`  |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?  |
-| | *Enter your response here...*  |
+| | Sous mac cela peut être difficile, il faudrait faire un scan du réseaux virtuel de docker. |
 
 
 ## Task 4: implement an "auditor" Node.js application
@@ -163,13 +163,13 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
 | | *Enter your response here...*  |
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
-| | *Enter your response here...* |
+| | avec la methode `get` pour rechercher une entrée et la commande `set`pour ecrire une entrée |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | *Enter your response here...* |
+| | `format` pour formatter une heure et `moment()` pour avoir l'heure courante |
 |Question | When and how do we **get rid of inactive players**?  |
-| | *Enter your response here...* |
+| | Lors qu'on demande la liste des musician actif, on peut faire une différence entre l'heure courante et la dernière heure d'écoute si la différence est plus grande que 5 on peut concidérer que le musician n'est plus actif |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | *Enter your response here...* |
+| | avec `net` qui permet de créer un serveur qui prends un callback lorsqu'une connection arrive. On peut avoir écrire dans le socket. Il suffit après de le mettre en écoute avec `listen` |
 
 
 ## Task 5: package the "auditor" app in a Docker image
@@ -177,7 +177,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
-| | *Enter your response here...* |
+| | On peut soit utiliser le script `validation.sh` soit simuler une execution et chercher si l'information est cohérente en demandant à l'auditeur la liste des musiciens actifs. |
 
 
 ## Constraints
