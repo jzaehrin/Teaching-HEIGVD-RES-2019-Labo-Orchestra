@@ -61,9 +61,13 @@ class Listener {
 const serverUDP = dgram.createSocket('udp4');
 const auditor = new Listener();
 
+serverUDP.bind(23456, () => {
+  serverUDP.addMembership('239.255.22.5');
+});
+
 serverUDP.on('error', (err) => {
   console.log(`server error:\n${err.stack}`);
-  server.close();
+  serverUDP.close();
 });
 
 // server.on('message', auditor.onMessage);
@@ -74,10 +78,6 @@ serverUDP.on('message', (msg, rinfo) => {
 serverUDP.on('listening', () => {
   const address = serverUDP.address();
   console.log(`server listening ${address.address}:${address.port}`);
-});
-
-serverUDP.bind(23456, '172.17.255.255', () => {
-  serverUDP.setBroadcast(true);
 });
 
 const serverTCP = net.createServer((socket) => {
